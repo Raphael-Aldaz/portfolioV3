@@ -1,0 +1,99 @@
+.header{
+position: relative;
+
+
+.burger__icon__wrapper{
+    width: 40px;
+    height: 40px;
+    margin-left: 14px;
+}
+.burger__icon {
+    top: 16px;
+}
+.burger__icon, .burger__icon::after, .burger__icon::before {
+    width: 40px; /* longueur de la ligne */
+    height: 4px; /* épaisseur de la ligne */
+    background-color: ivory; /* Couleur du hamburger */
+    border-radius: 4px; /* arrondie (pas obligatoire) */
+    position: absolute;
+}
+.burger__icon::after, .burger__icon::before{
+    content: " ";
+    display: block;
+}
+.burger__icon::after{
+    bottom: -10px;
+    
+}
+.burger__icon::before{
+    top: -10px;
+    
+}
+
+.burger__icon__rotate {
+    transform: rotate(45deg);
+}
+.burger__icon__rotate::after {
+    transform: rotate(90deg);
+    top: 0px;
+}
+.burger__icon__rotate::before {
+    display: none;
+} 
+}
+/**************************
+NavBarMobile
+**************************/
+.navBar__mobile {
+    position: absolute;
+    background-color: red;
+    width: 200px;
+    transform: translateX(-200px);
+    transition: transform 1s ease-in-out;
+
+    &__open{
+        transform: translateX(0px);
+    }
+}
+.navbarmobile__item{
+    list-style-type: none;
+    line-height: 50px;
+    z-index: 99;
+    text-shadow: 0.7px 1px black ;
+    font-family: 'Bungee', cursive;
+    text-transform: uppercase;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(2px);
+    padding-left: 20px;
+    border-bottom: 1px solid black;
+    
+    a{
+        color: ivory;
+    }
+}
+/**************************
+NavBarDesktop
+**************************/
+.navbardesktop {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100px;
+    width: 100%;
+    border-bottom: 0.5px solid wheat;
+    .navbardesktop__item{
+      align-self: center;
+      transition: transform 1s;
+
+      &__text{
+      font-family: 'Bungee', cursive;
+      font-size: 2rem;
+      color: wheat;
+    }
+      &:hover{
+        transform: scale(1.2);
+      }
+
+    }
+}

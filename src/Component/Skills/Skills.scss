@@ -1,0 +1,35 @@
+.skillsWrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+.skillsTitle{
+  font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #a8a8a8;
+    font-family: 'Bungee', cursive;
+    text-transform: uppercase;
+}
+.progressbar_wrapper{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
+  
+}
+@media screen and (min-width: 650px) {
+  .skillsWrapper{
+    width: 100%;
+  }
+  .progressbar_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    padding: 1rem 0 1rem 0
+}
+}

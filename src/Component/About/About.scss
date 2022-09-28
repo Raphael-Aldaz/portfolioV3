@@ -1,0 +1,154 @@
+.aboutMe{
+  padding-left: 0.6rem;
+  &__title{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #a8a8a8;
+    font-family: 'Bungee', cursive;
+    text-transform: uppercase;
+  }
+}
+.aboutMe__section{
+  position: relative;
+  color: hsl(0, 6%, 90%);
+}
+.aboutMe__section__text{
+  opacity: 0;
+  transition: opacity 2s;
+  &__title{
+    font-size: 1.4rem;
+    text-decoration: underline;
+    padding: 0.6rem;
+  }
+  &__description{
+    font-size: 1.2rem;
+    font-weight: 100;
+    line-height: 2rem;
+    letter-spacing: 0.1rem;
+    text-indent: 5%;
+    margin-bottom: 1.5rem;
+  }
+}
+.aboutMe__section__animation{
+  
+  svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    opacity: 0.4;
+  }
+/* SMOKE */
+#smoke-1 {
+    stroke-dasharray: 0, 10;
+    animation: smoke 6s ease infinite;
+}
+
+#smoke-2 {
+    stroke-dasharray: 0, 10;
+    animation: smoke 6s 0.5s ease infinite;
+}
+
+@keyframes smoke {
+    0% { stroke-dasharray: 0, 10; }
+    50% { stroke-dasharray: 10, 0; }
+    100% { stroke-dasharray: 10, 0; opacity: 0; }
+}
+
+/* WRITING */
+#line-1 {
+    opacity: 0;
+    animation: writing 0.5s linear forwards;
+}
+
+#line-2 {
+    opacity: 0;
+    animation: writing 0.5s 1s linear forwards;
+}
+
+#line-3 {
+    opacity: 0;
+    animation: writing 0.5s 1.5s linear forwards;
+}
+
+#line-4 {
+    opacity: 0;
+    animation: writing 0.5s 2s linear forwards;
+}
+
+@keyframes writing {
+    0% { width: 0px; opacity: 1;}
+    100% { width: 14px; opacity: 1;}
+}
+@keyframes myAnim {
+    0% {
+        opacity: 0;
+        transform: translateX(250px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+}
+@media screen and (min-width: 1000px) {
+  .aboutMe__section{
+    display: flex;
+    
+    &__text{
+      
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+      &__title{
+        margin-left: 3.5rem;
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        
+
+      }
+      &__description{
+        font-size: 1.6rem;
+      }
+    }
+    
+  }
+  .aboutMe__title{
+    margin-top: 1.5rem;
+    font-size: 4rem;
+    text-align: center;
+  }
+  .aboutMe__section__animation{
+      width: 50%;   
+    svg {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+  }
+}
+@keyframes writing {
+  0% { width: 0px; opacity: 1;}
+  100% { width: 14px; opacity: 1;}
+}
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 0.5;
+		transform: translateX(0);
+	}
+}
+.isActif{
+  opacity: 1;
+}
+.isEnter{
+  animation: myAnim 1s ease 0s 1 normal forwards;
+}

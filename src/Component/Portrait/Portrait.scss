@@ -1,0 +1,24 @@
+.portrait__area{
+    width: 100%;
+    height: 250px;
+    position: relative;
+}
+.portrait{
+    
+    display: flex;
+    justify-content: center;
+    background-color: #008C46 ;
+}
+.portrait__picture {
+   
+    
+    border-radius: 100%;
+    box-shadow: 9.91px 9.91px 15px #00743A, -9.91px -9.91px 15px #008C46;
+
+    
+}
+.wave{
+    position: absolute;
+    left: 0;
+    top: 170px;
+}
