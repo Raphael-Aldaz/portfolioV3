@@ -1,15 +1,26 @@
 import './Contact.scss'
 import emailjs from '@emailjs/browser';
+import { useRef } from 'react';
 const Contact = () => {
+
+  const form = useRef(null)
+  const sendMessage = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_59wr15u','template_yshzd6u',form.current, 'IUlnk4Y2z_EH-C8to' )
+    .then((response) => console.log(response))
+    .catch((error) => console.log(error))
+    form.current.reset();
+  }
   return(
     <div className='contact__wrapper'>
     <h1>Contact</h1>
     <div className='contact'>
     <div className='contact__form'>
-      <form>
-        <input type="email" required placeholder='Votre E-mail' />
-        <input type="text" required placeholder='Objet de votre message' />
-        <textarea required placeholder='Votre message' />
+      <form ref={form} onSubmit={sendMessage}>
+        <input type="email" required placeholder='Votre E-mail' name="user_email" />
+        <input type="text" required placeholder='Objet de votre message' name="object" />
+        <textarea required placeholder='Votre message' name="message" />
         <button type='submit'>Envoyer</button>
       </form>
     </div>
