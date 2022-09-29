@@ -19,7 +19,7 @@ const Contact = () => {
     form.current.reset();
   }
   return(
-    <div className='contact__wrapper'>
+    <div className='contact__wrapper' id='contact'>
     <h1>Contact</h1>
     <div className='contact'>
     <div className='contact__form'>

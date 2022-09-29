@@ -7,6 +7,13 @@ import Skills from './Skills/Skills';
 
 
 function App() {
+  const handleScroll = () => {
+    window.scrollTo({
+      top: 0,
+      left:0,
+      behavior: 'smooth'
+    })
+  }
   return (
     <div className="App">
     <Header />
@@ -14,6 +21,7 @@ function App() {
     <About />
     <Skills />
     <Contact />
+    <span onClick={handleScroll} className='btn__scroll'> &gt; </span>
     </div>
   );
 }

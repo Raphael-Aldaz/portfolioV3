@@ -1,4 +1,34 @@
 .App{
   height: 100vh;
   max-width: 100%;
+  position: relative;
 }
+.btn__scroll{
+  
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  font-size: 3rem;
+  font-weight: bold;
+  border: solid 1px white;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  animation-name: bounce;
+  animation-duration: 1s ;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  &:hover{
+    cursor: pointer;
+  }
+  
+
+}
+@keyframes bounce {
+  0%   { transform: translateY(0) rotate(-90deg); }
+  50%  { transform: translateY(-10px) rotate(-90deg); }
+  100% { transform: translateY(0) rotate(-90deg); }
+} 

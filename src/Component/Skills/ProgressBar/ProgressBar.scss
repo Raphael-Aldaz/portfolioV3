@@ -38,14 +38,14 @@
   font-size: 1.2rem;
   text-align: center;
 }
-/* .progressActif{
-  animation: myanim 2s ease-in;
-} */
-/* @keyframes myanim {
+ .isActif{
+  animation: myanim 3s ease-in;
+} 
+ @keyframes myanim {
   from {
     stroke-dashoffset : 314
   }
-} */
+} 
 @media screen and (min-width: 650px) {
   .card{
     width: 300px;
@@ -67,5 +67,13 @@
   .card__name{
     font-size: 2rem;
   }
-  
+
+  .isActif{
+  animation: myanimDesktop 3s ease-in;
+} 
 }
+@keyframes myanimDesktop {
+  from {
+    stroke-dashoffset : 815;
+  }
+} 

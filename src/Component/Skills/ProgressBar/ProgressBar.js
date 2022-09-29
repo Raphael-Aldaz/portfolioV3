@@ -4,6 +4,7 @@ import './ProgressBar.scss';
 
 const ProgressBar = ({color, name, percent}) => {
   const animBar = useRef();
+  const progress = useRef();
   /* const number = 314 - (314 * `${percent}`) / 100 */
   const circle = {
     filter: `drop-shadow(0 0 4px ${color})`
@@ -27,12 +28,34 @@ const ProgressBar = ({color, name, percent}) => {
       setRayon(130)
       setStrokeDashoffset(815 - (815 * `${percent}`) / 100)
     }
+  
   }, [width, height, percent])
+
+  useEffect(() => {
+    if (!progress.current) {
+      return;
+    }
+
+    const onScroll = () => {
+      const { scrollTop, clientHeight } = document.documentElement;
+      const topElementToTopViewport = progress.current.getBoundingClientRect().top;
+      if (
+        scrollTop
+        > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * 0.9
+      ) {
+        progress.current.classList.add('isActif');
+      }
+    };
+
+    const scrollEvent = window.addEventListener('scroll', onScroll);
+
+    
+  }, []);
   return (
     <div className='card' >
       <div className='percent' >
         <svg>
-          <circle ref={animBar} style={circle} stroke={color}  cy={radius} cx={radius} r={rayon} strokeDashoffset={strokeDashoffset} />
+          <circle ref={progress} style={circle} stroke={color}  cy={radius} cx={radius} r={rayon} strokeDashoffset={strokeDashoffset} />
         </svg>
       </div>
       <div style={text} className='card__name'>

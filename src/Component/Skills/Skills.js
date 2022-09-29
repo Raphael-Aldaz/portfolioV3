@@ -9,11 +9,13 @@ const progressData = [
   { language: 'REACTJS', bgcolor: 'hsl(110, 100%, 60%)', completed: 70 },
 ];
 const Skills = () => {
+  
+  let progressBarStyle = 'progressbar_wrapper' 
 
   return (
     <div className='skillsWrapper' id='skills'>
     <h1 className='skillsTitle'>Skills</h1>
-    <div className='progressbar_wrapper'>
+    <div className={progressBarStyle} >
     {
           progressData.map((item) => (
             <ProgressBar color={item.bgcolor} name={item.language} percent={item.completed} />
