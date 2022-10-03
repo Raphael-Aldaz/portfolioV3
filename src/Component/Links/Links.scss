@@ -1,0 +1,36 @@
+.links__wrapper{
+position: fixed;
+bottom: 40px;
+left: 25px;
+display: flex;
+justify-content: space-between;
+flex-direction: column-reverse;
+width: 80px;
+height: 20px;
+overflow: hidden;
+transition: all 0.5s linear;
+text-transform: capitalize;
+font-weight: 400;
+font-size: 1.2rem;
+letter-spacing: 0.1rem;
+color: #a8a8a8;
+font-family: 'Bungee', cursive;
+
+}
+.openTaMere{
+  display: flex;
+  flex-direction: column-reverse;
+  height: 200px;
+}
+.test{
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+}
+.link__1,.link__2,.link__3{
+  img{
+    width: 50%;
+  }
+}

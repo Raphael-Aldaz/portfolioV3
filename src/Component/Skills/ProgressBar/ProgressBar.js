@@ -3,15 +3,17 @@ import useWindowSize from '../../../Hooks/useWindowResize'
 import './ProgressBar.scss';
 
 const ProgressBar = ({color, name, percent}) => {
-  const animBar = useRef();
   const progress = useRef();
-  /* const number = 314 - (314 * `${percent}`) / 100 */
   const circle = {
     filter: `drop-shadow(0 0 4px ${color})`
   }
   const text = {
     color: `${color}`,
     filter: `drop-shadow(0 0 3px ${color})`
+  }
+  const barBox =  {
+    border: `solid 3px ${color}`,
+    borderRadius: '20px'
   }
   const {width, height} = useWindowSize();
   const [radius, setRadius] = useState(0);
@@ -47,13 +49,13 @@ const ProgressBar = ({color, name, percent}) => {
       }
     };
 
-    const scrollEvent = window.addEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll);
 
-    
+     
   }, []);
   return (
     <div className='card' >
-      <div className='percent' >
+      <div style={barBox} className='percent' >
         <svg>
           <circle ref={progress} style={circle} stroke={color}  cy={radius} cx={radius} r={rayon} strokeDashoffset={strokeDashoffset} />
         </svg>
