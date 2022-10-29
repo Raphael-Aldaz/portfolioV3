@@ -17,17 +17,16 @@ color: #a8a8a8;
 font-family: 'Bungee', cursive;
 
 }
-.openTaMere{
+.open{
   display: flex;
   flex-direction: column-reverse;
   height: 200px;
 }
-.test{
-  height: 150px;
+.link__list{
+
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  
 }
 .link__1,.link__2,.link__3{
   img{
